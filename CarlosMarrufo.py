@@ -1,3 +1,26 @@
+def buscarNumeros():
+    try:
+        f = open("numeros.txt", "r")
+        numeroEncontrado = 0
+        numeroBuscar = int(input("Ingrese el número a buscar: "))
+        for linea in f:
+            if numeroBuscar == int(linea.rstrip()):
+                numeroEncontrado = numeroEncontrado + 1
+        if numeroEncontrado >= 1:
+            print(f'El número se ha encontrado un total de {numeroEncontrado} veces en el archivo.')
+        else:
+            print("El número no se ha encontrado en el archivo.")
+    except:
+        crearArchivo = input("No se ha encontrado un archivo de datos, ¿quieres crear uno? (S/N): ").upper()
+        while crearArchivo != "S" or crearArchivo != "N":
+            if crearArchivo == "S":
+                pass
+            elif crearArchivo == "N":
+                print("Saliendo del sistema...")
+                exit()
+            else:
+                crearArchivo = input("Por favor ingresa una opción válida (S/N)").upper()
+
 #Bloque principal
 seleccionUsuario = 4
 print("*"*60)
@@ -11,7 +34,7 @@ while seleccionUsuario < 1 or seleccionUsuario > 3:
     print("*"*60)
     seleccionUsuario = int(input("Ingrese una opción: "))
     if seleccionUsuario == 1:
-        pass
+        buscarNumeros()
     elif seleccionUsuario == 2:
         pass
     elif seleccionUsuario == 3:
