@@ -5,3 +5,9 @@ f = open('C:\Archivos_Progra\Proyectos_Clonados\Practica1\ArchivoLista.txt', 'w'
 for numero in lista:
     f.write(str(numero) + '\n' )
 f.close
+
+#Codigo para abrir un archivo .txt
+f = open('C:\Archivos_Progra\Proyectos_Clonados\Practica1\ArchivoLista.txt')
+#Codigo para mostrar lo que esta en el archivo .txt
+print(f.read())
+f.close
