@@ -22,3 +22,4 @@ buscar(lista)
 f.close
 
 print ('programa terminado')
+#Olvide tomar foto del segundo metodo
